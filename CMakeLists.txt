@@ -5,7 +5,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
 set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
 message( "cmake path: " ${CMAKE_MODULE_PATH})
 
-set(OpenCV_DIR "./third_party_library/opencv-3.3.0/build")
 set(Pangolin_DIR "./third_party_library/Pangolin-master/build")
 set(Sophus_DIR "./third_party_library/Sophus/build")
 set(SOPHUS_INCLUDE_DIR "./third_party_library/Sophus")

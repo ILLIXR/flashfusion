@@ -432,11 +432,12 @@ namespace chisel
                 height = camera.GetHeight();
                 int cornerCheckCnt = 0;
 
-                float cornerIndex[8] = {0, chunkSize(0), (chunkSize(1) - 1) * chunkSize(0) - 1, chunkSize(1) * chunkSize(0) - 1,
-                                        (chunkSize(2) - 1 ) * chunkSize(1) * chunkSize(0),
-                                        (chunkSize(2) - 1 ) * chunkSize(1) * chunkSize(0) + chunkSize(0),
-                                        (chunkSize(2) - 1 ) * chunkSize(1) * chunkSize(0) + (chunkSize(1) - 1) * chunkSize(0) - 1 ,
-                                        (chunkSize(2) - 1 ) * chunkSize(1) * chunkSize(0) + chunkSize(1) * chunkSize(0) - 1};
+                Eigen::Vector3f chunkSizef = chunkSize.cast<float>();
+                float cornerIndex[8] = {0, chunkSizef(0), (chunkSizef(1) - 1) * chunkSizef(0) - 1, chunkSizef(1) * chunkSizef(0) - 1,
+                                        (chunkSizef(2) - 1 ) * chunkSizef(1) * chunkSizef(0),
+                                        (chunkSizef(2) - 1 ) * chunkSizef(1) * chunkSizef(0) + chunkSizef(0),
+                                        (chunkSizef(2) - 1 ) * chunkSizef(1) * chunkSizef(0) + (chunkSizef(1) - 1) * chunkSizef(0) - 1 ,
+                                        (chunkSizef(2) - 1 ) * chunkSizef(1) * chunkSizef(0) + chunkSizef(1) * chunkSizef(0) - 1};
                 // approximately 100, 000 candidate chunks,
                 // while 4, 000 chunks are candidate intersects
 
