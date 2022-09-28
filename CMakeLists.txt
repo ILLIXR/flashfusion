@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(flashfusion)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
-set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Choose the type of build." FORCE)
 message( "cmake path: " ${CMAKE_MODULE_PATH})
 
 set(Pangolin_DIR "./third_party_library/Pangolin-master/build")
@@ -24,8 +24,6 @@ find_package(PkgConfig)
 pkg_check_modules( EIGEN3 REQUIRED eigen3 )
 find_package(Boost COMPONENTS system thread  filesystem REQUIRED)
 
-set(realsense2_DIR "./third_party_library/librealsense-master/build")
-set(REALSENSE2_INCLUDE_DIRS "./third_party_library/librealsense-master/include")
 find_library(REALSENSE2_FOUND realsense2 HINTS ${realsense2_DIR} REQUIRED)
 
 if(NOT REALSENSE2_FOUND)

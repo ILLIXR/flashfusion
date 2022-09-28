@@ -1247,12 +1247,9 @@ typedef double SPARSE_MATRIX_NUM_TYPE;
   float optimizeKeyFrameMap(vector<FrameCorrespondence> &fCList, vector<Frame> &F,
                             std::vector<MultiViewGeometry::KeyFrameDatabase> &kflist,int origin)
   {
-    float robust_u = 1;
-     for(int i = 0; i < 1; i++)
-     {
-       robust_u = 0.5 * robust_u;
-       optimizeKeyFrameMapRobust(fCList,F,kflist,origin,robust_u);
-     }
+      float robust_u = 1;
+      robust_u = 0.5 * robust_u;
+      optimizeKeyFrameMapRobust(fCList, F, kflist, origin, robust_u);
   }
 
 
